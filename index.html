@@ -53,7 +53,7 @@ downloadFile = function()
 		for(var i=0;i<4;i++)
 		{
 			var adresa=url[i];
-			var ime_fajla=url[i];
+			var ime_fajla=file[i];
 			alert(adresa);
 			alert(ime_fajla);
 			var fileTransfer = new FileTransfer();
@@ -65,7 +65,7 @@ downloadFile = function()
 			alert("download complete: " + entry.fullPath);
 			},
 			function(error) {
-			alert("download error" + error.source);
+			alert("download error" + error.message);
 			}
 			);
 		}
