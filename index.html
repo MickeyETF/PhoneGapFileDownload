@@ -9,16 +9,16 @@ window.appRootDirName = "prijava_ispita";
 document.addEventListener("deviceready", onDeviceReady, false);
  
 function onDeviceReady() {
-console.log("device is ready");
+alert("device is ready");
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 }
  
 function fail() {
-console.log("failed to get filesystem");
+alert("failed to get filesystem");
 }
  
 function gotFS(fileSystem) {
-console.log("filesystem got");
+alert("filesystem got");
 window.fileSystem = fileSystem;
 fileSystem.root.getDirectory(window.appRootDirName, {
 create : true,
@@ -28,15 +28,15 @@ exclusive : false
  
 function dirReady(entry) {
 window.appRootDir = entry;
-console.log("application dir is ready");
+alert("application dir is ready");
 }
  
  
 downloadFile = function(){
 var fileTransfer = new FileTransfer();
  
-var url = "http://wstest.etf.unssa.rs.ba/studenti/ispiti/etf/931/ed448b3761b35affa0409afa2aaf09d8";
-var filePath = window.appRootDir.fullPath + "/test.json";
+var url = "http://qa.etf.unssa.rs.ba/univ/statut.pdf";
+var filePath = window.appRootDir.fullPath + "/test.pdf";
 fileTransfer.download(
 url,
 filePath,
