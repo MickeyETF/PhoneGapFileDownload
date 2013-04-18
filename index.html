@@ -33,9 +33,13 @@ alert("application dir is ready");
  
  
 downloadFile = function()
-{
-var url = new Array();
- 	url[0]="http://wstest.etf.unssa.rs.ba/studenti/nepolozeni_ispiti/etf/"+br_ind+"/"+loz;
+{		
+	
+		var br_ind="931";
+		var loz="ed448b3761b35affa0409afa2aaf09d8";
+		alert(br_ind,loz);
+		var url = new Array();
+ 		url[0]="http://wstest.etf.unssa.rs.ba/studenti/nepolozeni_ispiti/etf/"+br_ind+"/"+loz;
 		url[1]="http://wstest.etf.unssa.rs.ba/studenti/polozeni_ispiti/etf/"+br_ind+"/"+loz;
 		url[2]="http://wstest.etf.unssa.rs.ba/studenti/ispiti/etf/"+br_ind+"/"+loz;
 		url[3]="http://wstest.etf.unssa.rs.ba/studenti/status/etf/"+br_ind+"/"+loz;
@@ -50,7 +54,8 @@ var url = new Array();
 		{
 			var adresa=url[i];
 			var ime_fajla=url[i];
-			
+			alert(adresa);
+			alert(ime_fajla);
 			var fileTransfer = new FileTransfer();
 			var filePath = window.appRootDir.fullPath + ime_fajla;
 			fileTransfer.download(
